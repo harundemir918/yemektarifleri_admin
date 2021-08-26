@@ -1,23 +1,14 @@
-# Laravel Starter Tempelate
+# yemektarifleri_admin
 
-This starter template is perfect for starting a new laravel project.
+This starter template is based on riteshsingh1's template and perfect for starting a new laravel project.
 
-This consists of following features :
-
-* Based on bootstrap 4
-* Auth Scaffolding
-* Email Verification on registration
-* Integrated admin panel template
-* Noty for notifications on frontend
-* Passport Setup for api auth
-* VueX setup
-* MediaLibrary (Spatie/MediaLibrary) for image and video uploads
+Original template: https://github.com/riteshsingh1/laravel-starter
 
 ## Steps to install
 
 1. clone this repository:
 ```
-git clone https://github.com/riteshsingh1/laravel-starter.git
+git clone https://github.com/harundemir918/yemektarifleri_admin.git
 ```
 2. copy .env.example to .env
 ```
@@ -41,8 +32,11 @@ php artisan migrate
 ```
 php artisan passport:install
 ```
-8. For File Uploads
+8. for file uploads
 ```
- php artisan storage:link
+php artisan storage:link
 ```
-9. run in broswer and enjoy !!!
+9. run in browser
+```
+php artisan serve
+```
