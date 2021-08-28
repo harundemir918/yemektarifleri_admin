@@ -24,3 +24,8 @@ Route::get('/users/{id}', 'UsersController@edit')->name('users.edit');
 Route::post('/users/{id}', 'UsersController@update')->name('users.edit');
 Route::get('/users/{id}/delete', 'UsersController@delete')->name('users.delete');
 Route::get('/user/activate/{token}', 'Auth\AuthController@signupActivate');
+
+Route::get('/recipes', 'RecipesController@index')->name('recipes');
+Route::get('/recipes/{id}', 'RecipesController@edit')->name('recipes.edit');
+Route::post('/recipes/{id}', 'RecipesController@update')->name('recipes.edit');
+Route::get('/recipes/{id}/delete', 'RecipesController@delete')->name('recipes.delete');
