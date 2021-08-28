@@ -4,34 +4,34 @@
 {{-- breadcrumb --}}
 @component('components.bread',['icon'=>'users'])
 @slot('title')
-Users
+Kullanıcılar
 @endslot
 @slot('subtitle')
-Registered users
+Kullanıcı listesi
 @endslot
-Users
+Kullanıcılar
 @endcomponent
 {{-- /breadcrumb --}}
 {{-- list of users --}}
 <div class="row">
     <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">List of Users</h3>
+          <h3 class="tile-title">Kullanıcı listesi</h3>
           <div class="table-responsive">
             <table class="table">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Name</th>
+                  <th>Ad</th>
                   <th>Email</th>
-                  <th>gender</th>
-                  <th>Image</th>
-                  <th>Role</th>
-                  <th>Actions</th>
+                  <th>Cinsiyet</th>
+                  <th>Resim</th>
+                  <th>Rol</th>
+                  <th>İşlemler</th>
                 </tr>
               </thead>
               <tbody>
-               @foreach($users as $user)   
+               @foreach($users as $user)
                 <tr>
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
