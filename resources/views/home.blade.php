@@ -9,7 +9,7 @@
         @slot('subtitle')
             Ana sayfa
         @endslot
-        Dashboard
+        Ana Sayfa
     @endcomponent
     {{-- /breadcrumb --}}
     <div class="row">
