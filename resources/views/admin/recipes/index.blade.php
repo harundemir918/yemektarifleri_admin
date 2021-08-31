@@ -2,7 +2,7 @@
 
 @section('content')
   {{-- breadcrumb --}}
-  @component('components.bread',['icon'=>'users'])
+  @component('components.bread',['icon'=>'cutlery'])
     @slot('title')
       Tarifler
     @endslot
@@ -22,8 +22,9 @@
             <thead>
             <tr>
               <th>#</th>
-              <th>Kategori</th>
+              <th>Resim</th>
               <th>Ad</th>
+              <th>Kategori</th>
               <th>İçindekiler</th>
               <th>Tarif</th>
               <th>Kalori</th>
@@ -34,15 +35,16 @@
               <th>Yağ</th>
               <th>Aktif</th>
               <th>Tavsiye</th>
-              <th>Resim</th>
+              <th>İşlemler</th>
             </tr>
             </thead>
             <tbody>
             @foreach($recipes as $recipe)
               <tr>
                 <td>{{ $recipe->id }}</td>
-                <td>{{ $recipe->category }}</td>
+                <td><img src="{{ $recipe->picture }}" width="64" height="64"></td>
                 <td>{{ $recipe->title }}</td>
+                <td>{{ $recipe->category }}</td>
                 <td>{{ substr($recipe->ingredients, 0, 50) . "..." }}</td>
                 <td>{{ substr($recipe->recipe, 0, 50) . "..." }}</td>
                 <td>{{ $recipe->calories }}</td>
@@ -57,7 +59,6 @@
                 <td>
                   <input type="checkbox" @if($recipe->recommended == 1) checked @endif>
                 </td>
-                <td><img src="{{ $recipe->picture }}" width="64" height="64"></td>
                 <td>
                   <a href="{{ route('recipes.edit',$recipe->id) }}"><i class="fa fa-edit"></i></a>
                   <a href="{{ route('recipes.delete',$recipe->id) }}"><i class="fa fa-trash"></i></a>
