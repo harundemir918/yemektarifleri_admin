@@ -34,4 +34,10 @@ class UsersController extends Controller
         }
         return redirect('users')->with('success','User updated successfully');
     }
+
+    public function delete($id) {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect('users')->with('success','Kullanıcı silindi.');
+    }
 }
