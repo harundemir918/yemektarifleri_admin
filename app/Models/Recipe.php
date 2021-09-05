@@ -8,7 +8,7 @@ class Recipe extends Model
 {
 //    protected $table = "recipes";
 //
-//    protected $fillable = [
+    protected $fillable = [
 //        'category',
 //        'title',
 //        'ingredients',
@@ -19,8 +19,8 @@ class Recipe extends Model
 //        'carbohydrate',
 //        'protein',
 //        'fat',
-//        'active',
-//        'recommended',
+        'active',
+        'recommended',
 //        'picture',
-//    ];
+    ];
 }

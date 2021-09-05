@@ -91,13 +91,13 @@
                         <div class="form-group row">
                             <label class="control-label col-md-3">Yayın Durumu</label>
                             <div class="col-md-8">
-                                <input type="checkbox" @if($recipe->active == 1) checked @endif>
+                                <input type="checkbox" name="active" @if($recipe->active == 1) checked @endif>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="control-label col-md-3">Tavsiye Edilme Durumu</label>
                             <div class="col-md-8">
-                                <input type="checkbox" @if($recipe->recommended == 1) checked @endif>
+                                <input type="checkbox" name="recommended" @if($recipe->recommended == 1) checked @endif>
                             </div>
                         </div>
                     {{-- /form for editing the user information --}}

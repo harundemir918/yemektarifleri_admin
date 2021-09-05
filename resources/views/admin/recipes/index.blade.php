@@ -54,10 +54,10 @@
                 <td>{{ $recipe->protein }}</td>
                 <td>{{ $recipe->fat }}</td>
                 <td>
-                  <input type="checkbox" @if($recipe->active == 1) checked @endif>
+                  <input type="checkbox" @if($recipe->active == 1) checked @endif onclick="return false;">
                 </td>
                 <td>
-                  <input type="checkbox" @if($recipe->recommended == 1) checked @endif>
+                  <input type="checkbox" @if($recipe->recommended == 1) checked @endif onclick="return false;">
                 </td>
                 <td>
                   <a href="{{ route('recipes.edit',$recipe->id) }}"><i class="fa fa-edit"></i></a>

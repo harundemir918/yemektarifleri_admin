@@ -28,10 +28,17 @@ class RecipesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = Recipe::findOrFail($id);
-        if (request()->has('avatar')) {
-            $user->addMediaFromRequest('avatar')->toMediaCollection('avatars');
-        }
+        $recipe = Recipe::findOrFail($id);
+        $input = $request->only('active', 'recommended');
+        $input['active'] = $request->get('active') == 'on' ? 1 : 0;
+        $input['recommended'] = $input['active'] == 0 ? 0 : ($request->get('recommended') == 'on' ? 1 : 0);
+        $recipe->fill($input)->save();
         return redirect('recipes')->with('success','Tarif güncellendi.');
+    }
+
+    public function delete($id) {
+        $recipe = Recipe::findOrFail($id);
+        $recipe->delete();
+        return redirect('recipes')->with('success','Tarif silindi.');
     }
 }
