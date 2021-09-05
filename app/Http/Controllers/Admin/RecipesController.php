@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Recipe;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RecipesController extends Controller
 {

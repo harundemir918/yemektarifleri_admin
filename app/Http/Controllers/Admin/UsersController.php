@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
 {
@@ -30,7 +31,7 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         if (request()->has('avatar')) {
             $user->addMediaFromRequest('avatar')->toMediaCollection('avatars');
-        } 
+        }
         return redirect('users')->with('success','User updated successfully');
     }
 }
