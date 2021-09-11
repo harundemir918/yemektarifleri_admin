@@ -28,10 +28,10 @@ Route::group([
     });
 });
 
-Route::get('recipes', ['uses'=>'Api\RecipesController@index']);
-Route::get('/recipes/recommended', ['uses'=>'Api\RecipesController@recommended']);
-Route::get('/recipes/last_added', ['uses'=>'Api\RecipesController@last_added']);
-Route::get('/recipes/{recipe}', ['uses'=>'Api\RecipesController@show']);
+Route::get('recipes', ['uses'=>'Api\RecipesController@index'])->middleware('auth:api');
+Route::get('/recipes/recommended', ['uses'=>'Api\RecipesController@recommended'])->middleware('auth:api');
+Route::get('/recipes/last-added', ['uses'=>'Api\RecipesController@last_added'])->middleware('auth:api');
+Route::get('/recipes/{recipe}', ['uses'=>'Api\RecipesController@show'])->middleware('auth:api');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
