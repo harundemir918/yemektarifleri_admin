@@ -33,6 +33,9 @@ Route::get('/recipes/recommended', ['uses'=>'Api\RecipesController@recommended']
 Route::get('/recipes/last-added', ['uses'=>'Api\RecipesController@last_added'])->middleware('auth:api');
 Route::get('/recipes/{recipe}', ['uses'=>'Api\RecipesController@show'])->middleware('auth:api');
 
+Route::get('categories', ['uses'=>'Api\CategoriesController@index'])->middleware('auth:api');
+Route::get('/categories/last-added', ['uses'=>'Api\CategoriesController@last_added'])->middleware('auth:api');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
