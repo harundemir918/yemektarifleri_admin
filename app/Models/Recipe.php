@@ -9,18 +9,19 @@ class Recipe extends Model
 //    protected $table = "recipes";
 //
     protected $fillable = [
-//        'category',
-//        'title',
-//        'ingredients',
-//        'recipe',
-//        'calories',
-//        'duration',
-//        'person',
-//        'carbohydrate',
-//        'protein',
-//        'fat',
+        'user_id',
+        'category',
+        'title',
+        'ingredients',
+        'recipe',
+        'calories',
+        'duration',
+        'person',
+        'carbohydrate',
+        'protein',
+        'fat',
         'active',
         'recommended',
-//        'picture',
+        'picture',
     ];
 }

@@ -29,3 +29,10 @@ Route::get('/recipes', 'Admin\RecipesController@index')->name('recipes');
 Route::get('/recipes/{id}', 'Admin\RecipesController@edit')->name('recipes.edit');
 Route::post('/recipes/{id}', 'Admin\RecipesController@update')->name('recipes.edit');
 Route::get('/recipes/{id}/delete', 'Admin\RecipesController@delete')->name('recipes.delete');
+
+Route::get('/categories', 'Admin\CategoriesController@index')->name('categories');
+Route::get('/categories/create', 'Admin\CategoriesController@create')->name('categories.create');
+Route::post('/categories/store', 'Admin\CategoriesController@store')->name('categories.store');
+Route::get('/categories/{id}', 'Admin\CategoriesController@edit')->name('categories.edit');
+Route::post('/categories/{id}', 'Admin\CategoriesController@update')->name('categories.edit');
+Route::get('/categories/{id}/delete', 'Admin\CategoriesController@delete')->name('categories.delete');

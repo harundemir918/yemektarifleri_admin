@@ -33,7 +33,7 @@ class AuthController extends Controller
             'activation_token' => str_random(60)
         ]);
         $user->save();
-        $user->notify(new ConfirmYourAccount($user));
+//        $user->notify(new ConfirmYourAccount($user));
         return response()->json([
             'message' => 'Successfully created user!'
         ], 201);

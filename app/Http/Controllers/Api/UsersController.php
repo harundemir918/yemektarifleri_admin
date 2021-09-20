@@ -3,31 +3,23 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Recipe;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 
-class RecipesController extends Controller
+class UsersController extends Controller
 {
-    public function index() {
-        return Recipe::where("active", 1)->get();
+    public function show(User $user) : User {
+        return $user;
     }
 
-    public function show(Recipe $recipe) : Recipe {
-        return $recipe;
+    public function recipes($user_id) {
+        return Recipe::all()->where('user_id', null, $user_id)->values();
     }
 
-    public function recommended() {
-        return Recipe::where("active", 1)->where("recommended", 1)->take(5)->get();
-    }
-
-    public function last_added() {
-        return Recipe::where("active", 1)->latest()->take(5)->get();
-    }
-
-    public function store(Request $request) {
-        $recipe = new Recipe();
-        $recipe->user_id = $request->user_id;
+    public function update_recipe(Request $request, $user_id, $recipe_id)
+    {
+        $recipe = Recipe::findOrFail($recipe_id);
         $recipe->category = $request->category;
         $recipe->title = $request->title;
         $recipe->ingredients = $request->ingredients;
@@ -48,7 +40,16 @@ class RecipesController extends Controller
         }
         $recipe->save();
         if ($recipe) {
-            return response("Tarif başarıyla oluşturuldu.", 201);
+            return response("Tarif başarıyla güncellendi.", 200);
+        } else {
+            return response("Bir hata oluştu.", 500);
+        }
+    }
+
+    public function delete_recipe($user_id, $recipe_id) {
+        $recipe = Recipe::where('user_id', $user_id)->where('id', $recipe_id)->delete();
+        if ($recipe) {
+            return response("Tarif başarıyla silindi.", 200);
         } else {
             return response("Bir hata oluştu.", 500);
         }

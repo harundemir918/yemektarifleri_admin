@@ -9,6 +9,7 @@
       <ul class="app-menu">
         <li><a class="app-menu__item active" href="{{ route('home') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Ana Sayfa</span></a></li>
         <li><a class="app-menu__item" href="{{ route('recipes') }}"><i class="app-menu__icon fa fa-cutlery"></i><span class="app-menu__label">Tarifler</span></a></li>
+        <li><a class="app-menu__item" href="{{ route('categories') }}"><i class="app-menu__icon fa fa-list"></i><span class="app-menu__label">Kategoriler</span></a></li>
         <li><a class="app-menu__item" href="{{ route('users') }}"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Kullanıcılar</span></a></li>
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">UI Elements</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">

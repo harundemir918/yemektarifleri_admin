@@ -25,7 +25,7 @@
                         <div class="form-group row">
                             <label class="control-label col-md-3">Resim</label>
                             <div class="col-md-8">
-                                <img src="{{ $recipe->picture }}" height="256">
+                                <img src="{{ '../storage/recipes/' . $recipe->picture }}" height="256">
                             </div>
                         </div>
                         <div class="form-group row">

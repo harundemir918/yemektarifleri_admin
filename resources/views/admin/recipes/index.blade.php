@@ -42,7 +42,7 @@
             @foreach($recipes as $recipe)
               <tr>
                 <td>{{ $recipe->id }}</td>
-                <td><img src="{{ $recipe->picture }}" width="64" height="64"></td>
+                <td><img src="{{ 'storage/recipes/' . $recipe->picture }}" width="64" height="64"></td>
                 <td>{{ $recipe->title }}</td>
                 <td>{{ $recipe->category }}</td>
                 <td>{{ substr($recipe->ingredients, 0, 50) . "..." }}</td>
